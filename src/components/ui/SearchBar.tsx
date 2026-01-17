@@ -21,7 +21,7 @@ const SearchBar = () => {
     return (
         <form 
             onSubmit={e => {handleSubmit(e)}}
-            className="min-w-sm max-w-lg flex-1 border-3 border-gray-200 rounded-2xl flex items-center h-14 px-4 gap-4"
+            className="min-w-sm max-w-lg flex-1 border-3 border-gray-200 rounded-2xl flex items-center h-12 px-4 gap-4"
         >
             
             <Search/>
