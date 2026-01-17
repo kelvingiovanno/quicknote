@@ -1,7 +1,7 @@
 import { Bell } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const Notification = () => {
+const NotificationButton = () => {
 
     const [isOpen, setOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -34,8 +34,8 @@ const Notification = () => {
                 onClick={() => setOpen((prev) => !prev)}
             >
                 <Bell className="w-5 h-5 text-gray-700" />
-                <div className="absolute -right-2 -bottom-2 bg-red-500 border-2 border-white text-[12px] font-semibold leading-none text-white h-6 min-w-6 px-2 flex items-center justify-center rounded-full">
-                9+
+                <div className="absolute -right-2 -bottom-2 bg-red-500 border-2 border-white text-xs font-semibold leading-none text-white h-6 min-w-6 px-2 flex items-center justify-center rounded-full select-none">
+                    9+
                 </div>
             </div>
 
@@ -59,4 +59,4 @@ const Notification = () => {
     );
 };
 
-export default Notification;
+export default NotificationButton;
