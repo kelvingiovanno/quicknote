@@ -20,13 +20,14 @@ interface ButtonProps {
     title: string;
     color: ButtonColor;
     disable: boolean;
+    className?: string;
 }
 
 const Button = (props: ButtonProps) => {
     
     return (
         <button 
-            className={`${colorClasses[props.color]} cursor-pointer flex gap-3 px-5 h-14 items-center rounded-2xl whitespace-nowrap`}
+            className={`${colorClasses[props.color]} cursor-pointer flex gap-3 px-5 h-12 items-center rounded-2xl whitespace-nowrap ${props.className}`}
             disabled={props.disable}
         >
             {props.icon}
