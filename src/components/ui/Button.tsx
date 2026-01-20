@@ -1,37 +1,34 @@
-type ButtonColor =
-    | "primary"
-    | "secondary"
-    | "neutral"
-    | "success"
-    | "danger"
-    | "ghost";
+import type React from "react";
 
-const colorClasses: Record<ButtonColor, string> = {
-    primary: "bg-blue-600 text-white",
-    secondary: "bg-gray-200 text-gray-900",
-    neutral: "bg-white border border-gray-300 text-gray-700",
-    success: "bg-green-600 text-white",
-    danger: "bg-red-600 text-white",
-    ghost: "bg-transparent text-blue-600 hover:bg-blue-50",
+type ButtonVariant = "PRIMARY" | "SECONDARY";
+
+const BUTTON_VARIANT_STYLES : Record<ButtonVariant,string> = {
+    PRIMARY : "bg-blue-600 text-white",
+    SECONDARY: "bg-gray-600 text-white",
 };
 
-interface ButtonProps {
-    icon?:React.ReactNode;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     title: string;
-    color: ButtonColor;
-    disable: boolean;
-    className?: string;
-}
+    variant: ButtonVariant
+    isLoading: boolean;
+};
 
-const Button = (props: ButtonProps) => {
-    
+const Button = ({
+    title,
+    variant = "PRIMARY",
+    className = "",
+    disabled,
+    isLoading,
+    ...rest
+}: ButtonProps) => {
+
     return (
         <button 
-            className={`${colorClasses[props.color]} cursor-pointer flex gap-3 px-5 h-12 items-center rounded-2xl whitespace-nowrap ${props.className}`}
-            disabled={props.disable}
+            className={`text-base text-center w-full cursor-pointer py-2 rounded-md ${BUTTON_VARIANT_STYLES[variant]} ${className}`}
+            disabled={disabled || isLoading}
+            {...rest}
         >
-            {props.icon}
-            {props.title}
+            {title}
         </button>
     );
 }
