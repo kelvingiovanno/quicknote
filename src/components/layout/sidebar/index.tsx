@@ -32,7 +32,7 @@ const SideBar = () => {
 
                         <SideBarItem 
                             title="Dashboard"
-                            navigateTo="/Dashboard"
+                            navigateTo="/"
                             icon={<LayoutDashboard/>}
                         />
                         
