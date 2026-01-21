@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router"
 
 import DashboardLayout from "./layouts/DashboardLayout"
+import AuthLayout from "@/layouts/AuthLayout"
 
-import Dashboard from "./pages/dashboard/Dashboard"
-import Notes from "./pages/dashboard/Dashboard"
-import Favorites from "./pages/dashboard/Dashboard"
-import Trash from "./pages/dashboard/Dashboard"
-import Settings from "./pages/dashboard/Dashboard"
-import LogOut from "./pages/dashboard/Dashboard"
-import AuthLayout from "./layouts/AuthLayout"
-import Login from "./pages/auth/LogIn"
-import Signup from "./pages/auth/SignUp"
+import Dashboard from "@/pages/dashboard/Dashboard"
+import Notes from "@/pages/dashboard/Dashboard"
+import Favorites from "@/pages/dashboard/Dashboard"
+import Trash from "@/pages/dashboard/Dashboard"
+import Settings from "@/pages/dashboard/Dashboard"
+import LogOut from "@/pages/dashboard/Dashboard"
+import Login from "@/pages/auth/Login"
+import Signup from "@/pages/auth/Signup"
 
 function App() {
 
