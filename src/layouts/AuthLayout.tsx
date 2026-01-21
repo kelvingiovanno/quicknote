@@ -1,9 +1,12 @@
 import { Outlet } from "react-router";
 
 const AuthLayout = () => {
+
+    document.body.className = "bg-slate-200";
+
     return (
-        <div className="w-screen h-screen bg-slate-100 flex justify-center items-center">
-            <main className="bg-white p-8 w-96 rounded-lg border-2 border-slate-200">
+        <div className="min-w-3xl h-screen bg-slate-200 flex justify-center items-center">
+            <main className="w-md bg-white p-8 rounded-lg border border-slate-300">
                 <Outlet />
             </main>
         </div>
