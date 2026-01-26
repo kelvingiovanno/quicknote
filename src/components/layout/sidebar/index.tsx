@@ -5,7 +5,6 @@ import {
     Notebook,
     Star, 
     Trash,
-    Settings,
     LogOut 
 
 } from "lucide-react";
