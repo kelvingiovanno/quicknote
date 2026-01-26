@@ -13,7 +13,7 @@ import {
 const SideBar = () => {
     
     return (
-        <aside className="fixed flex flex-col justify-between top-0 bg-white w-64 h-screen px-4">
+        <aside className="w- flex flex-col justify-between top-0 bg-white w-64 h-screen px-4">
            
             <div>
                 
@@ -65,12 +65,6 @@ const SideBar = () => {
                 <p className="text-sm text-black/80">General</p>
 
                 <nav className="space-y-2">
-
-                    <SideBarItem 
-                        title="Settings"
-                        navigateTo="/settings"
-                        icon={<Settings/>}
-                    />
 
                     <SideBarItem 
                         title="Log Out"
