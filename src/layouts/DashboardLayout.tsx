@@ -6,11 +6,11 @@ import SideBar from "@/components/layout/sidebar";
 const DashboardLayout = () => {
     
     return (
-        <div className="w-screen">
+        <div className="w-screen flex">
             <SideBar />
-            <div className="ml-64 flex flex-col h-screen">
+            <div className="flex flex-col h-screen flex-1">
                 <Navbar />
-                <main className="bg-slate-200 flex-1 rounded-tl-xl border-2 border-slate-300">
+                <main className="overflow-auto h-10 bg-gray-200 flex-1 rounded-tl-xl border border-slate-300 p-8">
                     <Outlet />
                 </main>
             </div>
