@@ -4,11 +4,10 @@ import DashboardLayout from "./layouts/DashboardLayout"
 import AuthLayout from "@/layouts/AuthLayout"
 
 import Dashboard from "@/pages/dashboard/Dashboard"
-import Notes from "@/pages/dashboard/Dashboard"
-import Favorites from "@/pages/dashboard/Dashboard"
-import Trash from "@/pages/dashboard/Dashboard"
-import Settings from "@/pages/dashboard/Dashboard"
-import LogOut from "@/pages/dashboard/Dashboard"
+import Notes from "@/pages/dashboard/Notes"
+import Favorites from "@/pages/dashboard/Favorites"
+import Trash from "@/pages/dashboard/Trash"
+import LogOut from "@/pages/dashboard/Logout"
 import Login from "@/pages/auth/Login"
 import Signup from "@/pages/auth/Signup"
 
@@ -20,10 +19,9 @@ function App() {
         
         <Route path={"/"} element={<DashboardLayout/>} >
           <Route index element={<Dashboard/>}/>
-          <Route path={"/notes"} element={<Notes/>}/>
-          <Route path={"/favorites"} element={<Favorites/>}/>
-          <Route path={"/trash"} element={<Trash/>}/>
-          <Route path={"/settings"} element={<Settings/>}/>
+          <Route path={"notes"} element={<Notes/>}/>
+          <Route path={"favorites"} element={<Favorites/>}/>
+          <Route path={"trash"} element={<Trash/>}/>
           <Route path={"logout"} element={<LogOut/>}/>
         </Route>
 
