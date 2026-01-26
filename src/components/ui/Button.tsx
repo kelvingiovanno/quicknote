@@ -10,7 +10,7 @@ const BUTTON_VARIANT_STYLES : Record<ButtonVariant,string> = {
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     title: string;
     variant: ButtonVariant
-    isLoading: boolean;
+    isLoading?: boolean;
 };
 
 const Button = ({
@@ -18,13 +18,13 @@ const Button = ({
     variant = "PRIMARY",
     className = "",
     disabled,
-    isLoading,
+    isLoading = false,
     ...rest
 }: ButtonProps) => {
 
     return (
         <button 
-            className={`text-base text-center w-full cursor-pointer py-2 rounded-md transition-color duration-100 ease-in-out ${BUTTON_VARIANT_STYLES[variant]} ${className}`}
+            className={`text-base text-center cursor-pointer py-2 px-4 rounded-md transition-color duration-100 ease-in-out ${BUTTON_VARIANT_STYLES[variant]} ${className}`}
             disabled={disabled || isLoading}
             {...rest}
         >
