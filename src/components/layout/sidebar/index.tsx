@@ -18,13 +18,13 @@ const SideBar = () => {
             <div>
                 
                 <div className="flex items-center w-full h-24 space-x-2">
-                    <div className="p-2 bg-blue-600 rounded-md">
-                        <p className="text-white text-md font-bold">Qn</p>
+                    <div className="bg-blue-600 rounded-md w-9 h-9 flex items-center justify-center">
+                        <p className="text-white text-md font-bold m-0">Qn</p>
                     </div>
                     <p className="font-bold text-xl">Quick Note</p>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 py-3">
 
                     <p className="text-sm text-black/80">Menu</p>
 
