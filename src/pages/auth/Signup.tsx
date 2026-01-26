@@ -28,7 +28,7 @@ const Signup = () => {
             <Input type={"password"} label="Repeat Password"/>
 
 
-            <Button title={"Register"} variant={"PRIMARY"} isLoading={false} />
+            <Button title={"Register"} variant={"PRIMARY"} isLoading={false} className="w-full"/>
             <p className="text-center text-sm text-black/70">Already have an account? <Link to={'/signin'} className="underline text-black/90">Sign In</Link></p>
 
         </form>
