@@ -19,15 +19,15 @@ const Dashboard = () => {
                         <Button title={"Create Note"} variant={"PRIMARY"} />
                     </Link>
                 </div>
-                <div className="grid xl:grid-cols-4 xl2:grid-cols-5 lg:grid-cols-3 grid-cols-2 gap-4">
-                    <div className="h-72 bg-white border border-slate-300 rounded-xl "></div>
-                    <div className="h-72 bg-white border border-slate-300 rounded-xl "></div>
-                    <div className="h-72 bg-white border border-slate-300 rounded-xl "></div>
-                    <div className="h-72 bg-white border border-slate-300 rounded-xl "></div>
-                    <div className="h-72 bg-white border border-slate-300 rounded-xl "></div>
-                    <div className="h-72 bg-white border border-slate-300 rounded-xl "></div>
-                    <div className="h-72 bg-white border border-slate-300 rounded-xl "></div>
-                    <div className="h-72 bg-white border border-slate-300 rounded-xl "></div>
+                <div className="grid xl:grid-cols-3 xl2:grid-cols-5 lg:grid-cols-2 gap-4">
+                    <div className="aspect-3/2 bg-white border border-slate-300 rounded-xl "></div>
+                    <div className="aspect-3/2 bg-white border border-slate-300 rounded-xl "></div>
+                    <div className="aspect-3/2 bg-white border border-slate-300 rounded-xl "></div>
+                    <div className="aspect-3/2 bg-white border border-slate-300 rounded-xl "></div>
+                    <div className="aspect-3/2 bg-white border border-slate-300 rounded-xl "></div>
+                    <div className="aspect-3/2 bg-white border border-slate-300 rounded-xl "></div>
+                    <div className="aspect-3/2 bg-white border border-slate-300 rounded-xl "></div>
+                    <div className="aspect-3/2 bg-white border border-slate-300 rounded-xl "></div>
                 </div>
             </section>
         </>
