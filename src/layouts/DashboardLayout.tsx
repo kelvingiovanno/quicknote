@@ -10,7 +10,7 @@ const DashboardLayout = () => {
             <SideBar />
             <div className="flex flex-col h-screen flex-1">
                 <Navbar />
-                <main className="overflow-auto h-10 bg-gray-200 flex-1 rounded-tl-xl border border-slate-300 p-8">
+                <main className="overflow-auto  h-10 bg-gray-200 flex-1 rounded-tl-xl border border-slate-300 p-8">
                     <Outlet />
                 </main>
             </div>
