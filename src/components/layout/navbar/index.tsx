@@ -5,11 +5,11 @@ import NotificationButton from "@/components/layout/navbar/components/Notificati
 const Navbar = () => {
 
     return (
-        <header className="px-10 py-6 w-full bg-white flex justify-between items-center">
+        <header className="px-10 py-6 w-full bg-white flex gap-4 justify-end md:justify-between items-center">
             
             <SearchBar />
             
-            <div className="flex justify-end items-center gap-7">
+            <div className="flex justify-end items-center gap-4">
                 <NotificationButton />                
                 <Profile />
             </div>
