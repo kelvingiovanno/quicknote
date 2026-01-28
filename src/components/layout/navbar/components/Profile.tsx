@@ -6,9 +6,9 @@ const Profile = () => {
         alt="profile"
         className="w-10 h-10 rounded-full object-cover"
       />
-      <div className="flex flex-col leading-tight">
-        <p className="font-semibold text-based">Kelvin Giovanno</p>
-        <p className="text-sm text-black/70">kelvingio2000</p>
+      <div className="hidden md:flex flex-col">
+        <p className="font-semibold text-sm">Kelvin Giovanno</p>
+        <p className="text-xs text-black/70">kelvingio2000</p>
       </div>
     </div>
   );
