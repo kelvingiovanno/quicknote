@@ -37,7 +37,7 @@ const SideBar = () => {
         <>
 
             <div 
-                className="fixed md:hidden m-6 p-2 bg-white border-3 border-gray-200 rounded-xl"
+                className="fixed lg:hidden m-6 p-2 bg-white border-3 border-gray-200 rounded-xl"
                 onClick={() => {setOpen(!open)}}
             >
                 <Menu  className="w-5 h-5"/>
@@ -47,7 +47,7 @@ const SideBar = () => {
 
             <aside
                 ref={sidebarRef} 
-                className={`z-20 fixed md:static flex flex-col justify-between bg-white w-64 h-screen px-4 transition-transform duration-300 ease-in-out md:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}`}>
+                className={`z-20 fixed lg:static flex flex-col justify-between bg-white w-64 h-screen px-4 transition-transform duration-300 ease-in-out lg:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}`}>
            
                 <div>
                     
