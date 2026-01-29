@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import useSidebar from "@/hook/useSidebar";
 import SideBarItem from "./components/SideBarItem";
-import { Menu } from "lucide-react";
 
 import { 
 
@@ -8,49 +7,58 @@ import {
     Notebook,
     Star, 
     Trash,
-    LogOut 
+    LogOut, 
+    X
 
 } from "lucide-react";
+import { useEffect, useRef } from "react";
+import IconButton from "@/components/ui/IconButton";
 
 const SideBar = () => {
 
-    const [open, setOpen] = useState<boolean>(true);
-    const sidebarRef = useRef<HTMLElement | null>(null)
+    const sidebar = useSidebar();
 
+    const sidebarRef = useRef<HTMLElement|null>(null);
 
     useEffect(() => {
-    
+        
+        if(!sidebar.sidebarOpenState) return;
 
-        document.addEventListener("mousedown", (event: MouseEvent) => {
-            
-            if(!sidebarRef.current) return;
-            
-            if(!sidebarRef.current.contains(event.target as Node)) {
-                setOpen(false)
+        const handleClickOutside = (event: MouseEvent) => {
+ 
+            if (!sidebarRef.current) return;
+
+            if (!sidebarRef.current.contains(event.target as Node)) {
+               sidebar.closeSidebar();
             }
-            
-        });
 
-    }, [])
+            console.log(sidebar)
+        };
+
+        document.addEventListener('mousedown', handleClickOutside)
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+        
+
+    }, [sidebar]);
 
     return (
         <>
-
-            <div 
-                className="fixed lg:hidden m-6 p-2 bg-white border-3 border-gray-200 rounded-xl"
-                onClick={() => {setOpen(!open)}}
-            >
-                <Menu  className="w-5 h-5"/>
-            </div>
             
-            <div className={`z-10 md:opacity-0 md:pointer-events-none fixed w-screen h-screen bg-black transition-opacity duration-300 ease-in-out  ${open ? "opacity-40 pointer-events-auto" : "opacity-0 pointer-events-none"}`}></div>
+            <div className={`z-10 fixed left-0 bg-black/30 w-screen h-screen lg:hidden transition-opacity duration-300 ease ${sidebar.sidebarOpenState ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0" }`}></div>
 
             <aside
-                ref={sidebarRef} 
-                className={`z-20 fixed lg:static flex flex-col justify-between bg-white w-64 h-screen px-4 transition-transform duration-300 ease-in-out lg:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}`}>
-           
+                ref={sidebarRef}
+                className={`z-10 fixed flex flex-col justify-between bg-white min-w-60 h-screen px-4 lg:static lg:translate-x-0 transition-transform duration-300 ease-in-out ${sidebar.sidebarOpenState ? "translate-x-0" : "-translate-x-full"}`}
+            >
                 <div>
                     
+                    <div className="flex w-full justify-end mt-5 lg:hidden">
+                        <IconButton icon={<X/>} className="border-none text-black/50" onClick={() => {sidebar.closeSidebar()}}/>
+                    </div>
+
                     <div className="flex items-center w-full h-24 space-x-2">
                         <div className="bg-blue-600 rounded-md w-9 h-9 flex items-center justify-center">
                             <p className="text-white text-md font-bold m-0">Qn</p>
@@ -60,7 +68,7 @@ const SideBar = () => {
 
                     <div className="space-y-3 py-3">
 
-                        <p className="text-sm text-black/80">Menu</p>
+                        <p className="text-xs text-black/70">Menu</p>
 
                         <nav className="space-y-2">
 
@@ -96,7 +104,7 @@ const SideBar = () => {
                 
                 <div className="mb-8 space-y-3">
 
-                    <p className="text-sm text-black/80">General</p>
+                    <p className="text-xs text-black/70">General</p>
 
                     <nav className="space-y-2">
 
