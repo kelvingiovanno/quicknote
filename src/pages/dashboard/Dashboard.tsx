@@ -23,11 +23,11 @@ const Dashboard = () => {
           </Link>
         </div>
 
-        <div className="grid gap-4  sm:grid-cols-2 lg:grid-cols-2  xl:grid-cols-3 ">
+        <div className="grid gap-4  sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 ">
           {Array.from({ length: 8 }).map((_, index) => (
             <div
               key={index}
-              className="group relative aspect-3/2 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-slate-300 hover:shadow-md"
+              className="group relative aspect-3/3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-slate-300 hover:shadow-md"
             >
               <div className="flex h-full flex-col justify-between">
                 <div>
