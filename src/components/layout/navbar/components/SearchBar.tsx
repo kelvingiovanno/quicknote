@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Search } from "lucide-react";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 
 const SearchBar = () => {
@@ -21,13 +21,9 @@ const SearchBar = () => {
     return (
         <form 
             onSubmit={e => {handleSubmit(e)}}
-            className="md:min-w-80 md:max-w-lg md:flex-1 border-3 border-gray-200 md:rounded-lg flex items-center md:h-12 p-2 rounded-xl md:px-4 gap-4"
+            className="h-12 border-3 border-gray-200 md:rounded-lg flex items-center px-4 rounded-xl gap-4 w-sm"
         >
             
-            <Link to={"/search-note"} className="md:hidden">
-                <Search className="w-5 h-5"/>
-            </Link>
-
             <Search className="hidden md:block w-5 h-5"/>
 
             <input 
