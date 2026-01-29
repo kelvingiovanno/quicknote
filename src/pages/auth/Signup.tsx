@@ -23,7 +23,7 @@ const Signup = () => {
             </div>
 
             <Input type={"text"} label="Username"/>
-            <Input type={"password"} label="Password" onChange={(e) => {setPassword(e.target.value)}}/>
+            <Input type={"password"} label="Password" value={password} onChange={(e) => {setPassword(e.target.value)}}/>
             <PasswordIndicator password={password}/>
             <Input type={"password"} label="Repeat Password"/>
 

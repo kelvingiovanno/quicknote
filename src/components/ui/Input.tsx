@@ -1,6 +1,6 @@
 import React from "react";
 
-type InputProps = React.HTMLAttributes<HTMLInputElement> & {
+type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
     label?: string;
     type: "text" | "password";
 }
