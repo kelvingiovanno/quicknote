@@ -21,15 +21,15 @@ const SearchBar = () => {
     return (
         <form 
             onSubmit={e => {handleSubmit(e)}}
-            className="h-12 border-3 border-gray-200 md:rounded-lg flex items-center px-4 rounded-xl gap-4 w-sm"
+            className="h-12 border-3 border-gray-200 md:flex items-center px-4 rounded-xl gap-4 w-80 hidden"
         >
             
-            <Search className="hidden md:block w-5 h-5"/>
+            <Search className="w-5 h-5"/>
 
             <input 
                 type="text" 
                 placeholder="Search your notes"
-                className="h-full flex-1 outline-none text-base hidden md:block"
+                className="h-full flex-1 outline-none text-base"
                 onChange={e => {setQuery(e.target.value)}}
             />
 
