@@ -10,6 +10,8 @@ import Trash from "@/pages/dashboard/Trash"
 import LogOut from "@/pages/dashboard/Logout"
 import Login from "@/pages/auth/Login"
 import Signup from "@/pages/auth/Signup"
+import SearchNote from "@/pages/dashboard/Searchnote"
+import Newnote from "./pages/dashboard/Newnote"
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
           <Route path={"favorites"} element={<Favorites/>}/>
           <Route path={"trash"} element={<Trash/>}/>
           <Route path={"logout"} element={<LogOut/>}/>
+          <Route path={"search"} element={<SearchNote/>}/>
+          <Route path={"newnote"} element={<Newnote/>}/>
         </Route>
 
         <Route element={<AuthLayout/>}>
