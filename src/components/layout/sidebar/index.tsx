@@ -1,5 +1,5 @@
 import useSidebar from "@/hook/useSidebar";
-import SideBarItem from "./components/SideBarItem";
+import SideBarItem from "@/components/layout/sidebar/components/SideBarItem";
 
 import { 
 
@@ -11,8 +11,8 @@ import {
     X
 
 } from "lucide-react";
+
 import { useEffect, useRef } from "react";
-import IconButton from "@/components/ui/IconButton";
 
 const SideBar = () => {
 
@@ -27,9 +27,9 @@ const SideBar = () => {
         const handleClickOutside = (event: MouseEvent) => {
  
             if (!sidebarRef.current) return;
-
+            
             if (!sidebarRef.current.contains(event.target as Node)) {
-               sidebar.closeSidebar();
+                sidebar.closeSidebar();
             }
 
             console.log(sidebar)
@@ -56,7 +56,9 @@ const SideBar = () => {
                 <div>
                     
                     <div className="flex w-full justify-end mt-5 lg:hidden">
-                        <IconButton icon={<X/>} className="border-none text-black/50" onClick={() => {sidebar.closeSidebar()}}/>
+                        <div className="hover:bg-slate-200 p-2 rounded-md transition-colors duration-200 ease-in-out cursor-pointer" onClick={() => {sidebar.closeSidebar()}}>
+                            <X/>
+                        </div>
                     </div>
 
                     <div className="flex items-center w-full h-24 space-x-2">
