@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/navbar";
 import SideBar from "@/components/layout/sidebar";
 import SidebarProvider from "@/providers/SidebarProvider";
 
-const DashboardLayout = () => {
+const MainLayout = () => {
     
     return (
         <SidebarProvider> 
@@ -23,4 +23,4 @@ const DashboardLayout = () => {
     );
 }
 
-export default DashboardLayout;
+export default MainLayout;
