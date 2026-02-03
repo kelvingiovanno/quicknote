@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 
 
-const Signup = () => {
+const SignUp = () => {
 
     const [password, setPassword] = useState<string>("");
 
@@ -36,4 +36,4 @@ const Signup = () => {
     );
 }
 
-export default Signup;
+export default SignUp;

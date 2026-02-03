@@ -1,13 +1,12 @@
-import Button from "@/components/ui/Button";
-import Checkbox from "@/components/ui/Checkbox";
-import Input from "@/components/ui/Input";
 import { Link } from "react-router";
 import { LogIn } from "lucide-react";
 
+import Button from "@/components/ui/Button";
+import Checkbox from "@/components/ui/Checkbox";
+import Input from "@/components/ui/Input";
 
-const Login = () => {
+const Signin = () => {
     
-
     return (
 
         <form className="space-y-5">
@@ -35,4 +34,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default Signin;
