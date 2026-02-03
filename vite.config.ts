@@ -12,7 +12,4 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: resolve(__dirname, "./src") }]
   },
-  build: {
-    chunkSizeWarningLimit: 1000, 
-  },
-})
+});
