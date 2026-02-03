@@ -1,40 +1,12 @@
-import { Route, Routes } from "react-router"
+import { RouterProvider } from "react-router"
 
-import DashboardLayout from "./layouts/DashboardLayout"
-import AuthLayout from "@/layouts/AuthLayout"
-
-import Dashboard from "@/pages/dashboard/Dashboard"
-import Notes from "@/pages/dashboard/Notes"
-import Favorites from "@/pages/dashboard/Favorites"
-import Trash from "@/pages/dashboard/Trash"
-import LogOut from "@/pages/dashboard/Logout"
-import Login from "@/pages/auth/Login"
-import Signup from "@/pages/auth/Signup"
-import SearchNote from "@/pages/dashboard/Searchnote"
-import Newnote from "./pages/dashboard/Newnote"
+import Router from "./routes"
 
 function App() {
 
   return (
     <>
-      <Routes>
-        
-        <Route path={"/"} element={<DashboardLayout/>} >
-          <Route index element={<Dashboard/>}/>
-          <Route path={"notes"} element={<Notes/>}/>
-          <Route path={"favorites"} element={<Favorites/>}/>
-          <Route path={"trash"} element={<Trash/>}/>
-          <Route path={"logout"} element={<LogOut/>}/>
-          <Route path={"search"} element={<SearchNote/>}/>
-          <Route path={"newnote"} element={<Newnote/>}/>
-        </Route>
-
-        <Route element={<AuthLayout/>}>
-          <Route path={"/signin"} element={<Login/>}/>
-          <Route path={"/signup"} element={<Signup/>}/>
-        </Route>
-
-      </Routes>
+      <RouterProvider router={Router}/>
     </>
   )
 }
