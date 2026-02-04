@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router";
 
-import MainLayout from "@/layouts/MainLayout";
-import AuthLayout from "@/layouts/AuthLayout";
+import MainLayout from "@/app/layouts/MainLayout";
+import AuthLayout from "@/app/layouts/AuthLayout";
 
-const Router = createBrowserRouter([
+const router = createBrowserRouter([
     
     // Main Routes
 
@@ -12,9 +12,9 @@ const Router = createBrowserRouter([
         Component: MainLayout ,
         children: [
             {
-                index: true,
+                index: true, 
                 lazy: async () => {
-                    const {default: Dashboard} = await import("@/pages/main/Dashboard");
+                    const {default: Dashboard} = await import("@/backup/_pages/main/Dashboard");
                     return {Component: Dashboard};
                 },
 
@@ -22,42 +22,42 @@ const Router = createBrowserRouter([
             {
                 path: "notes",
                 lazy: async () => {
-                    const {default: Notes} = await import("@/pages/main/Notes");
+                    const {default: Notes} = await import("@/backup/_pages/main/Notes");
                     return {Component: Notes};
                 },
             },
             {
                 path: "favorites",
                 lazy: async () => {
-                    const {default: Favorites} = await import("@/pages/main/Favorites");
+                    const {default: Favorites} = await import("@/backup/_pages/main/Favorites");
                     return {Component: Favorites};
                 },
             },
             {
                 path: "trash",
                 lazy: async () => {
-                    const {default: Trash} = await import("@/pages/main/Trash");
+                    const {default: Trash} = await import("@/backup/_pages/main/Trash");
                     return {Component: Trash};
                 },
             },
             {
                 path: "logout",
                 lazy: async () => {
-                    const {default: Logout} = await import("@/pages/main/Logout");
+                    const {default: Logout} = await import("@/backup/_pages/main/Logout");
                     return {Component: Logout};
                 },
             },
             {
                 path: "search-note",
                 lazy: async () => {
-                    const {default: SearchNote} = await import("@/pages/main/SearchNote");
+                    const {default: SearchNote} = await import("@/backup/_pages/main/SearchNote");
                     return {Component: SearchNote};
                 },
             },
             {
                 path: "note", 
                 lazy: async () => {
-                    const {default: Note} = await import("@/pages/main/Note");
+                    const {default: Note} = await import("@/backup/_pages/main/Note");
                     return {Component: Note};
                 },
             },
@@ -74,14 +74,14 @@ const Router = createBrowserRouter([
             {
                 path: "signin",
                 lazy: async () => {
-                    const {default: SigIn} = await import("@/pages/auth/SignIn");
+                    const {default: SigIn} = await import("@/backup/_pages/auth/SignIn");
                     return {Component: SigIn};
                 },
             },
             {
                 path: "signup",
                 lazy: async () => {
-                    const {default: SignUp} = await import("@/pages/auth/SignUp");
+                    const {default: SignUp} = await import("@/backup/_pages/auth/SignUp");
                     return {Component: SignUp};
                 },
             },
@@ -90,4 +90,4 @@ const Router = createBrowserRouter([
 
 ]);
 
-export default Router;
+export default router;

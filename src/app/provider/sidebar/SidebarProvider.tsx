@@ -1,5 +1,5 @@
-import SidebarContext from "@/context/SidebarContex";
 import React, { useState } from "react";
+import SidebarContext from "@/app/provider/sidebar/sidebar.context";
 
 export const SidebarProvider = ({
     children
@@ -25,5 +25,3 @@ export const SidebarProvider = ({
         </SidebarContext.Provider>
     )
 } 
-
-export default SidebarProvider;

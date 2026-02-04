@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { LayoutDashboard, Notebook, Star, Trash, LogOut, X } from "lucide-react";
 
-import useSidebar from "@/hook/useSidebar";
-import SideBarItem from "@/components/layout/sidebar/components/SideBarItem";
+import useSidebar from "@/backup/_hook/useSidebar";
+import SideBarItem from "@/backup/_components/layout/sidebar/components/SideBarItem";
 
 const SideBar = () => {
     

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
 
-import Navbar from "@/components/layout/navbar";
-import SideBar from "@/components/layout/sidebar";
-import SidebarProvider from "@/providers/SidebarProvider";
+import Navbar from "@/backup/_components/layout/navbar";
+import SideBar from "@/backup/_components/layout/sidebar";
+import SidebarProvider from "@/backup/_providers/SidebarProvider";
 
 const MainLayout = () => {
     

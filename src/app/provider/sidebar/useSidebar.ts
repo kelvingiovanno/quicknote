@@ -1,7 +1,7 @@
-import SidebarContext from "@/context/SidebarContex";
 import { useContext } from "react";
+import SidebarContext from "@/app/provider/sidebar/sidebar.context";
 
-const useSidebar = () => {
+export const useSidebar = () => {
  
     const ctx = useContext(SidebarContext);
 
@@ -11,5 +11,3 @@ const useSidebar = () => {
 
     return ctx;
 }
-
-export default useSidebar;

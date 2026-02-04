@@ -1,12 +1,12 @@
-import Button from "@/components/ui/Button";
+import Button from "@/backup/_components/ui/Button";
 import { Link } from "react-router";
 
-const Trash = () => {
+const Favorites = () => {
     return (
         <>
             <section className="flex flex-col gap-4">
                 <div className="flex justify-between items-center">
-                    <p className="text-xl font-bold">Trash Notes</p>
+                    <p className="text-xl font-bold">Favorite Notes</p>
                     <Link to={`/new-note`}>    
                         <Button title={"Create Note"} variant={"PRIMARY"} />
                     </Link>
@@ -26,4 +26,4 @@ const Trash = () => {
     );
 }
 
-export default Trash;
+export default Favorites;

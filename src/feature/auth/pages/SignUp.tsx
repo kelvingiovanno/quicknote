@@ -1,6 +1,6 @@
-import PasswordIndicator from "@/components/features/auth/components/PasswordIndicator";
-import Button from "@/components/ui/Button";
-import Input from "@/components/ui/Input";
+import PasswordIndicator from "@/backup/_components/features/auth/components/PasswordIndicator";
+import Button from "@/backup/_components/ui/Button";
+import Input from "@/backup/_components/ui/Input";
 import { LogOut } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";

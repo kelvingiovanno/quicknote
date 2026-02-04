@@ -1,9 +1,9 @@
 import { Link } from "react-router";
 import { LogIn } from "lucide-react";
 
-import Button from "@/components/ui/Button";
-import Checkbox from "@/components/ui/Checkbox";
-import Input from "@/components/ui/Input";
+import Button from "@/backup/_components/ui/Button";
+import Checkbox from "@/backup/_components/ui/Checkbox";
+import Input from "@/backup/_components/ui/Input";
 
 const Signin = () => {
     

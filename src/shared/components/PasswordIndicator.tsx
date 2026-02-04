@@ -2,7 +2,7 @@ import {
     passwordIndicatorLevel, 
     passwordColorLevel, 
     MAX_LEVEL 
-} from "@/components/features/auth/utils/passwordIndicator"; 
+} from "@/backup/_components/features/auth/utils/passwordIndicator"; 
 
 type PasswordIndicatorProps = {
     password: string;
