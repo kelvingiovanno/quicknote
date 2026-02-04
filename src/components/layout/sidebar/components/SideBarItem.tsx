@@ -16,10 +16,7 @@ const SideBarItem = (props : SideBarItemProps) => {
         <NavLink 
             to={props.navigateTo}
             className={`
-                w-full p-3 flex items-center gap-2 rounded-md hover:bg-slate-200
-                transition-all duration-200 ease-in text-sm
-                ${isActive ? "bg-slate-200" : "bg-white text-black/80" }
-            `}
+                w-full p-3 flex items-center gap-2 rounded-md hover:bg-blue-50 transition-all duration-200 ease-in text-sm ${isActive ? "bg-blue-50 text-blue-500" : "bg-white text-black/80" }`}
         >
             {props.icon}
             {props.title}

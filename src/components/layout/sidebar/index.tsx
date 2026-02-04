@@ -1,128 +1,93 @@
+import { useEffect, useRef } from "react";
+import { LayoutDashboard, Notebook, Star, Trash, LogOut, X } from "lucide-react";
+
 import useSidebar from "@/hook/useSidebar";
 import SideBarItem from "@/components/layout/sidebar/components/SideBarItem";
 
-import { 
-
-    LayoutDashboard , 
-    Notebook,
-    Star, 
-    Trash,
-    LogOut, 
-    X
-
-} from "lucide-react";
-
-import { useEffect, useRef } from "react";
-
 const SideBar = () => {
-
-    const sidebar = useSidebar();
-
-    const sidebarRef = useRef<HTMLElement|null>(null);
+    
+    const { sidebarOpenState, closeSidebar } = useSidebar();
+    const sidebarRef = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
-        
-        if(!sidebar.sidebarOpenState) return;
+    
+        if (!sidebarOpenState) return;
 
         const handleClickOutside = (event: MouseEvent) => {
- 
-            if (!sidebarRef.current) return;
-            
-            if (!sidebarRef.current.contains(event.target as Node)) {
-                sidebar.closeSidebar();
+            if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)){
+                closeSidebar();
             }
-
-            console.log(sidebar)
         };
 
-        document.addEventListener('mousedown', handleClickOutside)
+        document.addEventListener("mousedown", handleClickOutside);
 
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener("mousedown", handleClickOutside);
         }
-        
-
-    }, [sidebar]);
+    
+    }, [sidebarOpenState, closeSidebar]);
 
     return (
         <>
-            
-            <div className={`z-10 fixed left-0 bg-black/30 w-screen h-screen lg:hidden transition-opacity duration-300 ease ${sidebar.sidebarOpenState ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0" }`}></div>
+            <div
+                onClick={closeSidebar}
+                className={`fixed inset-0 z-20 bg-black/30 backdrop-blur-xs lg:hidden transition-opacity duration-300 ${sidebarOpenState ? "opacity-100" : "pointer-events-none opacity-0"}`}
+            />
 
             <aside
                 ref={sidebarRef}
-                className={`z-10 fixed flex flex-col justify-between bg-white min-w-60 h-screen px-4 lg:static lg:translate-x-0 transition-transform duration-300 ease-in-out ${sidebar.sidebarOpenState ? "translate-x-0" : "-translate-x-full"}`}
+                aria-hidden={!sidebarOpenState}
+                className={`fixed z-30 inset-y-0 left-0 w-64 bg-white flex flex-col justify-between px-4 transition-transform duration-300 ease-in-out ${sidebarOpenState ? "translate-x-0" : "-translate-x-full"} lg:static lg:translate-x-0`}
             >
+                
                 <div>
-                    
-                    <div className="flex w-full justify-end mt-5 lg:hidden">
-                        <div className="hover:bg-slate-200 p-2 rounded-md transition-colors duration-200 ease-in-out cursor-pointer" onClick={() => {sidebar.closeSidebar()}}>
-                            <X/>
-                        </div>
+
+                    <div className="flex justify-end py-4 lg:hidden">
+                        <button
+                            onClick={closeSidebar}
+                            className="rounded-md p-2 hover:bg-slate-100 transition"
+                        >
+                            <X size={20} />
+                        </button>
                     </div>
 
-                    <div className="flex items-center w-full h-24 space-x-2">
-                        <div className="bg-blue-600 rounded-md w-9 h-9 flex items-center justify-center">
-                            <p className="text-white text-md font-bold m-0">Qn</p>
+                    <div className="flex items-center gap-3 px-2 py-7">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-600 text-white font-bold">
+                            Qn
                         </div>
-                        <p className="font-bold text-xl">Quick Note</p>
+                        <span className="text-lg font-semibold">Quick Note</span>
                     </div>
 
-                    <div className="space-y-3 py-3">
-
-                        <p className="text-xs text-black/70">Menu</p>
+                    <div className="space-y-4">
+                        <p className="px-2 text-sm text-slate-500">
+                        Menu
+                        </p>
 
                         <nav className="space-y-2">
-
-                            <SideBarItem 
-                                title="Dashboard"
-                                navigateTo="/"
-                                icon={<LayoutDashboard/>}
-                            />
-                            
-                            <SideBarItem 
-                                title="Notes"
-                                navigateTo="/notes"
-                                icon={<Notebook/>}
-                            />
-
-                            <SideBarItem 
-                                title="Favorites"
-                                navigateTo="/favorites"
-                                icon={<Star/>}
-                            />
-
-                            <SideBarItem 
-                                title="Trash"
-                                navigateTo="/trash"
-                                icon={<Trash/>}
-                            />
-
+                            <SideBarItem title="Dashboard" navigateTo="/" icon={<LayoutDashboard/>} />
+                            <SideBarItem title="Notes" navigateTo="/notes" icon={<Notebook/>} />
+                            <SideBarItem title="Favorites" navigateTo="/favorites" icon={<Star />} />
+                            <SideBarItem title="Trash" navigateTo="/trash" icon={<Trash/>} />
                         </nav>
-                        
                     </div>
-
                 </div>
-                
-                <div className="mb-8 space-y-3">
 
-                    <p className="text-xs text-black/70">General</p>
-
-                    <nav className="space-y-2">
-
-                        <SideBarItem 
+                <div className="pb-6 space-y-4">
+                    <p className="px-2 text-sm text-slate-500">
+                        General
+                    </p>
+                    <nav>
+                        <SideBarItem
                             title="Log Out"
                             navigateTo="/logout"
                             icon={<LogOut/>}
                         />
-
                     </nav>
-
                 </div>
-
+                
             </aside>
         </>
-    )
-}
+    );
+};
 
 export default SideBar;
