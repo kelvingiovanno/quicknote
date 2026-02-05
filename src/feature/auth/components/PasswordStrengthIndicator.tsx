@@ -2,13 +2,13 @@ import {
     passwordIndicatorLevel, 
     passwordColorLevel, 
     MAX_LEVEL 
-} from "@/backup/_components/features/auth/utils/passwordIndicator"; 
+} from "@/feature/auth/utils/passwordStrengthIndicator"; 
 
 type PasswordIndicatorProps = {
     password: string;
 }
 
-const PasswordIndicator = ({
+const PasswordStrenghtIndicator = ({
     password
 }: PasswordIndicatorProps) => {
     
@@ -50,4 +50,4 @@ const PasswordIndicator = ({
     )
 }
 
-export default PasswordIndicator;
+export default PasswordStrenghtIndicator;

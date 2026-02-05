@@ -1,7 +1,7 @@
-import SearchBar from "@/backup/_components/layout/navbar/components/SearchBar"
-import Profile from "@/backup/_components/layout/navbar/components/Profile"
+import SearchBar from "./components/SearchBar"
+import Profile from "./components/Profile"
 import { Menu, Search } from "lucide-react"
-import useSidebar from "@/backup/_hook/useSidebar"
+import { useSidebar } from "@/app/provider"
 import { NavLink } from "react-router"
 
 const Navbar = () => {    

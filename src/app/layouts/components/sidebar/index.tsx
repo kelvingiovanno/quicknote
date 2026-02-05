@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { LayoutDashboard, Notebook, Star, Trash, LogOut, X } from "lucide-react";
 
-import useSidebar from "@/backup/_hook/useSidebar";
-import SideBarItem from "@/backup/_components/layout/sidebar/components/SideBarItem";
+import { useSidebar } from "@/app/provider";
+import SideBarItem from "./components/SideBarItem";
 
 const SideBar = () => {
     
@@ -36,7 +36,6 @@ const SideBar = () => {
 
             <aside
                 ref={sidebarRef}
-                aria-hidden={!sidebarOpenState}
                 className={`fixed z-30 inset-y-0 left-0 w-64 bg-white flex flex-col justify-between px-4 transition-transform duration-300 ease-in-out ${sidebarOpenState ? "translate-x-0" : "-translate-x-full"} lg:static lg:translate-x-0`}
             >
                 
