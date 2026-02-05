@@ -1,9 +1,9 @@
 import { Link } from "react-router";
 import { LogIn } from "lucide-react";
 
-import Button from "@/backup/_components/ui/Button";
-import Checkbox from "@/backup/_components/ui/Checkbox";
-import Input from "@/backup/_components/ui/Input";
+import Button from "@/shared/components/Button";
+import Checkbox from "@/shared/components/Checkbox";
+import Input from "@/shared/components/Input";
 
 const Signin = () => {
     
@@ -27,7 +27,7 @@ const Signin = () => {
             </div>
 
             <Button title={"Sign In"} variant={"PRIMARY"} isLoading={false} className="w-full"/>
-            <p className="text-center text-sm text-black/70">Dont't have account? <Link to={'/signup'} className="underline text-black/90">Sign Up</Link></p>
+            <p className="text-center text-sm text-black/70">Dont't have account? <Link to={'/auth/signup'} className="underline text-black/90">Sign Up</Link></p>
 
         </form>
 
