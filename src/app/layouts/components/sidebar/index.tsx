@@ -51,7 +51,7 @@ const SideBar = () => {
                     </div>
 
                     <div className="flex items-center gap-3 px-2 py-7">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-600 text-white font-bold">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-black text-white font-bold">
                             Qn
                         </div>
                         <span className="text-lg font-semibold">Quick Note</span>
