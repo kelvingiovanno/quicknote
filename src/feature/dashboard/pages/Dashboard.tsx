@@ -1,8 +1,16 @@
 import NoteList from "@/feature/notes/components/NoteList";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
+import { getAllRecentNotesMock } from "../load";
+import NoteListSkeleton from "@/feature/notes/components/NoteListSkeleton";
 
 const Dashboard = () => {
-  
+
+  const {data, isLoading} = useQuery({
+    queryKey: ["recent-notes"], 
+    queryFn: getAllRecentNotesMock
+  });
+
   return (
     <>
 
@@ -37,9 +45,10 @@ const Dashboard = () => {
           </Link>
         </div>
 
-        <NoteList />
+        { isLoading ? <NoteListSkeleton /> : <NoteList datas={data}/> }
     
       </section>
+    
     </>
   );
 };

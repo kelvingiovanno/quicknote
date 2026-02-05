@@ -2,10 +2,10 @@ import type { Note } from "../notes/types";
 
 const mockNotes: Note[] = [
     {
+        id: "3f6c4a6e-2b9e-4c5a-9b0f-1a9d7e1a8f23",
         title: "Meeting Notes",
         description: "Summary of project kickoff meeting",
-        date: new Date("2024-12-01"),
-        slug: "meeting-notes",
+        date: "21 December 2021",
         content: `
             <h2>Project Kickoff</h2>
             <p>We discussed the <strong>project scope</strong> and initial milestones.</p>
@@ -20,10 +20,10 @@ const mockNotes: Note[] = [
         trash: false,
     },
     {
+        id: "a92d7b14-6e4c-4e2f-8c31-5f6b1a2d9c44",
         title: "React Architecture Ideas",
         description: "Feature-based folder structure thoughts",
-        date: new Date("2024-12-03"),
-        slug: "react-architecture-ideas",
+        date: "21 December 2021",
         content: `
             <h2>Feature-Based Architecture</h2>
             <p>This approach helps keep the app <strong>scalable</strong> and <strong>maintainable</strong>.</p>
@@ -41,10 +41,10 @@ const mockNotes: Note[] = [
         trash: false,
     },
     {
+        id: "5e1a9c33-8b4f-4d12-b6a2-0f7c9e4d21aa",
         title: "Shopping List",
         description: "Things to buy this weekend",
-        date: new Date("2024-11-28"),
-        slug: "shopping-list",
+        date: "21 December 2021",
         content: `
             <h3>Groceries</h3>
             <ul data-type="taskList">
@@ -57,10 +57,10 @@ const mockNotes: Note[] = [
         trash: false,
     },
     {
+        id: "c47d2f8a-91b3-4a0d-9e65-2b6c4f1a8d90",
         title: "Learning Goals 2025",
         description: "Personal roadmap",
-        date: new Date("2024-12-05"),
-        slug: "learning-goals-2025",
+        date: "21 December 2021",
         content: `
             <h2>Goals</h2>
             <ol>
@@ -75,7 +75,7 @@ const mockNotes: Note[] = [
     },
 ];
 
-export const getAllRecentNotesMock = async (delay: number): Promise<Note[]> => {
-    await new Promise((resolve) => setTimeout(resolve, delay));;
+export const getAllRecentNotesMock = async (): Promise<Note[]> => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     return mockNotes;
 };

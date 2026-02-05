@@ -1,4 +1,3 @@
-// import "@/styles/editor.css"
 import { Tiptap, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { Placeholder } from '@tiptap/extensions'
