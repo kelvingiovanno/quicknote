@@ -1,12 +1,19 @@
+import { RouterProvider } from "react-router"
 import { SidebarProvider } from "./sidebar/SidebarProvider"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
-export const AppProvider = ({
-    children
-} : {children: React.ReactNode}) => {
+import router from "../routes"
+
+export const AppProvider = () => {
     
+    const queryClient = new QueryClient();
+
     return (
-        <SidebarProvider>
-            {children}
-        </SidebarProvider>
+        <QueryClientProvider client={queryClient}>
+            <SidebarProvider>
+                <RouterProvider router={router}/>
+            </SidebarProvider>
+        </QueryClientProvider>
+        
     )
 }
