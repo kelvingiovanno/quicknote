@@ -3,7 +3,7 @@ import type React from "react";
 type ButtonVariant = "PRIMARY" | "SECONDARY";
 
 const BUTTON_VARIANT_STYLES : Record<ButtonVariant,string> = {
-    PRIMARY : "bg-blue-600 text-white/90 active:bg-blue-800 active:text-white ",
+    PRIMARY : "bg-black text-white/90 active:text-white ",
     SECONDARY: "bg-white border-2 border-blue-600 text-blue-600/80 active:bg-slate-100 active:text-blue-600",
 };
 
