@@ -1,16 +1,23 @@
 import { Download, Star, Trash2, Undo2, SquareX } from "lucide-react";
 import type { Note, NoteCardVariant } from "../types";
 import { useNavigate } from "react-router";
-import { exportAction, favoriteAction, restoreAction, trashAction } from "../action";
 import { useState } from "react";
-import { useQueryClient } from "@tanstack/react-query";
+import useFavoriteNoteMutation from "../hooks/useFavoriteNoteMutation";
+import useTrashNote from "../hooks/useTrashNoteMutation";
+import useRestoreNote from "../hooks/useRestoreNoteMutation";
+import useExportNoteMutation from "../hooks/useExportNoteMutation";
 
 const NoteCard = ({data, variant = "DEFAULT"} : {data: Note, variant?: NoteCardVariant}) => {
 
     const [favoriteState, setFavorite] = useState<boolean>(data.favorite);
         
-    const queryClient = useQueryClient();
     const navigate = useNavigate();
+
+    const noteFavoriteMutation = useFavoriteNoteMutation(data.id);
+    const noteExportMutation = useExportNoteMutation(data.id);
+    const noteRestoreMutation = useRestoreNote(data.id);
+    const noteTrashMutation = useTrashNote(data.id);
+
 
 
     return (
@@ -36,12 +43,8 @@ const NoteCard = ({data, variant = "DEFAULT"} : {data: Note, variant?: NoteCardV
                                     onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
-                                        favoriteAction(data.id);
                                         setFavorite(!favoriteState)
-
-                                        queryClient.invalidateQueries({
-                                            queryKey: ["favorite-notes"]
-                                        });
+                                        noteFavoriteMutation.mutate();
                                     }}
                                 >
                                     <Star className={`transition-all ease-in duration-600 ${favoriteState ? "fill-yellow-300" : ""}`} size={20} />
@@ -53,7 +56,7 @@ const NoteCard = ({data, variant = "DEFAULT"} : {data: Note, variant?: NoteCardV
                                     onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
-                                        exportAction(data.id);
+                                        noteExportMutation.mutate();
                                     }}
                                 >
                                     <Download size={20}/>
@@ -65,7 +68,7 @@ const NoteCard = ({data, variant = "DEFAULT"} : {data: Note, variant?: NoteCardV
                                     onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
-                                        trashAction(data.id);
+                                        noteTrashMutation.mutate();
                                     }}
                                 >
                                     <Trash2 size={20}/>
@@ -82,11 +85,7 @@ const NoteCard = ({data, variant = "DEFAULT"} : {data: Note, variant?: NoteCardV
                                         e.preventDefault();
                                         e.stopPropagation();
 
-                                        restoreAction(data.id);
-                                        
-                                        queryClient.invalidateQueries({
-                                            queryKey: ["trash-notes"]
-                                        });
+                                        noteRestoreMutation.mutate();
                                     }}
                                 >
                                     <Undo2 size={20}/>
@@ -99,11 +98,7 @@ const NoteCard = ({data, variant = "DEFAULT"} : {data: Note, variant?: NoteCardV
                                         e.preventDefault();
                                         e.stopPropagation();
 
-                                        restoreAction(data.id);
-                                        
-                                        queryClient.invalidateQueries({
-                                            queryKey: ["trash-notes"]
-                                        });
+                                        noteRestoreMutation.mutate();
                                     }}
                                 >
                                     <SquareX size={20}/>
