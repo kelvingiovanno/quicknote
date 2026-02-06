@@ -1,3 +1,4 @@
+import type { QueryKey } from "@tanstack/react-query";
 import type { Note } from "../notes/types";
 
 const mockNotes: Note[] = [
@@ -88,4 +89,10 @@ export const loadFavoriteNotes = async () : Promise<Note[]>  => {
 export const loadAllNotes = async () : Promise<Note[]> => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     return mockNotes;
+}
+
+export const loadNoteContent = async ({queryKey} : {queryKey: QueryKey}) : Promise<Note | null> => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const [, note_id] = queryKey;
+    return mockNotes.find(note => note.id === note_id) ?? null;
 }
